@@ -1,0 +1,65 @@
+Package: pecme
+Type: Package
+Title: Penalized ECME Estimation for Censored Linear Mixed Models
+Version: 0.1.1
+Authors@R: c(
+      person(
+        "Ali Asghar",
+        "Haeri-Mehrizi",
+        email = "haeri.stat@gmail.com",
+        role = c("aut", "cre")
+      ),
+      person(
+        "Arshia",
+        "Haeri-Mehrizi",
+        email = "haeri.arshia@gmail.com",
+        role = "aut"
+      ),
+      person(
+        "Adel",
+        "Mohammadpour",
+        email = "adel.mohammadpour@ucalgary.ca",
+        role = "rev"
+      )
+    )
+Description: Fits Gaussian linear mixed models with a random intercept
+    when the response is subject to left, right, and/or interval
+    censoring, using the Expectation/Conditional Maximization Either
+    (ECME) algorithm of Liu and Rubin (1994) in the spirit of the
+    fast censored-response mixed-model algorithm of Vaida and Liu
+    (2009). Simultaneous estimation and variable selection is
+    supported through coordinate-descent penalized maximization with
+    Lasso, Adaptive Lasso, SCAD, MCP, Elastic Net, and Ridge
+    penalties (no penalty is also supported). The random intercept is
+    integrated out by Gauss-Hermite quadrature at every iteration, and
+    the two ECME conditional-maximization steps respectively maximize
+    the expected penalized complete-data objective (for the
+    regression coefficients) and the actual observed-data marginal
+    likelihood (for the variance components), which is the defining
+    feature of ECME relative to plain ECM/EM. The package provides a
+    single-fit engine, a sequential/parallel penalty-parameter grid
+    search with information-criterion or cross-validated selection,
+    data-dependent or user-supplied lambda grids, and an
+    Expectation-Maximization based treatment of a completely missing
+    (at random) response, sharing the same truncated-normal machinery
+    used for censoring. References: Liu and Rubin (1994)
+    "The ECME algorithm: A simple extension of EM and ECM with
+    faster monotone convergence" <doi:10.1093/biomet/81.4.633>;
+    Vaida and Liu (2009) "Fast Implementation for Normal Mixed
+    Effects Models With Censored Response"
+    <doi:10.1198/jcgs.2009.07130>.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: stats, graphics, parallel, lme4, withr
+Suggests: testthat (>= 3.0.0), waldo, mice
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
+NeedsCompilation: no
+Packaged: 2026-09-27 14:27:04 UTC; Haeri
+Author: Ali Asghar Haeri-Mehrizi [aut, cre],
+  Arshia Haeri-Mehrizi [aut],
+  Adel Mohammadpour [rev]
+Maintainer: Ali Asghar Haeri-Mehrizi <haeri.stat@gmail.com>
+Repository: CRAN
+Date/Publication: 2026-10-07 09:00:08 UTC
